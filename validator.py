@@ -6,7 +6,11 @@ import subprocess
 def validate_product():
     try:
         with open ("publicKey.pem", "rt") as f:
-            public_key = ECC.import_key(f.read())
+            pub_key = f.read()
+        print("Verified public key of the Vendor:")
+        print(pub_key)
+
+        public_key = ECC.import_key(pub_key)
 
         with open ("product.py", "rb") as f:
             product = f.read()
@@ -18,14 +22,14 @@ def validate_product():
         validator = DSS.new(public_key, 'fips-186-3')
         validator.verify(product_hash, signature)
         
-        print("Code certificate valid: execution allowed")
+        print("\nCode certificate valid: execution allowed")
         subprocess.run(["python", "product.py"]) 
 
     except ValueError:
-        print("Code certificate invalid: execution denied")
+        print("\nCode certificate invalid: execution denied")
 
     except FileNotFoundError as e:
-        print(f"Code certificate invalid: execution denied - {str(e)}")
+        print(f"\nMissing File: {str(e)}")
 
 def main():
     validate_product()
