@@ -102,7 +102,7 @@ MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAENXbK1o6ubAQ3kYr+0olZoRnQA+9z
 
 Code certificate valid: execution allowed
 
-Executing product...
+Executing product:
 I am a software made by 11850393
 ```
 
