@@ -26,7 +26,8 @@ The project follows a structured cryptographic approach:
   ```sh
   pip install pycryptodome
   ```
-  or 
+  or
+
   ```sh
   pip3 install pycryptodome
   ```
@@ -59,6 +60,8 @@ Install the cryptographic library:
 ```sh
 pip install pycryptodome
 ```
+or
+
 ```sh
 pip3 install pycryptodome
 ```
@@ -88,7 +91,7 @@ Validate the signature and execute the program:
 python validator.py
 ```
 
-### **7. Test for Tampering**
+### **7. Test for Interception**
 Modify `product.py`, then try running `validator.py` again:
 ```sh
 python validator.py
