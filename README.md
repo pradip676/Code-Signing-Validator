@@ -1,4 +1,4 @@
-# Code Signing Validator - ECDSA Implementation
+# Code Signing - ECDSA Implementation
 
 ## Project Overview
 
@@ -90,12 +90,6 @@ Validate the signature and execute the program:
 ```sh
 python validator.py
 ```
-
-### **7. Test for Interception**
-Modify `product.py`, then try running `validator.py` again:
-```sh
-python validator.py
-```
 - **Sample output for original product**:
 ```sh
   Verified public key of the Vendor:
@@ -111,6 +105,17 @@ Code certificate valid: execution allowed
 Executing product...
 I am a software made by 11850393
 ```
+
+### **7. Testing for Unauthorized Modifications.**
+Modify `product.py`, then try running `validator.py` again i.e. uncomment the following line 
+```sh
+print("Malicious code!")
+```
+Then run:
+```sh
+python validator.py
+```
+
 - **Sample output for modified product**:
 ```sh
   Verified public key of the Vendor:
