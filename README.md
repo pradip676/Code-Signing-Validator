@@ -107,7 +107,7 @@ I am a software made by 11850393
 ```
 
 ### **7. Testing for Unauthorized Modifications.**
-Modify `product.py`, then try running `validator.py` again i.e. uncomment the following line 
+Modify `product.py`, save the file and run `validator.py` again i.e. uncomment the following line 
 ```sh
 print("Malicious code!")
 ```
